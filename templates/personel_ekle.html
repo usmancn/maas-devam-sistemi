@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Yeni Personel Ekle</h2>
+
+<form method="post" action="{{ url_for('personel_ekle') }}" class="row g-3">
+
+  <div class="col-md-6">
+    <label class="form-label">Ad</label>
+    <input type="text" name="ad" class="form-control" required>
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Soyad</label>
+    <input type="text" name="soyad" class="form-control" required>
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Departman</label>
+    <select name="departman_id" class="form-select">
+      <option value="">Seçiniz</option>
+      {% for d in departmanlar %}
+      <option value="{{ d.departman_id }}">{{ d.departman_adi }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Maaş</label>
+    <input type="number" step="0.01" name="maas" class="form-control">
+  </div>
+
+  <div class="col-12 mt-3">
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a href="{{ url_for('personel_list') }}" class="btn btn-secondary">İptal</a>
+  </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Maaş & Devam Yönetim Sistemi</h2>
+<p>Bu panel üzerinden personel, devam ve maaş işlemlerini yönetebilirsiniz.</p>
+
+<div class="row mt-4">
+
+  <div class="col-md-4 mb-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Personel Listesi</h5>
+        <p class="card-text">Tüm personelleri görüntüle</p>
+        <a href="/personel" class="btn btn-primary">Git</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Personel Ekle</h5>
+        <p class="card-text">Yeni personel kaydı oluştur</p>
+        <a href="/personel_ekle" class="btn btn-success">Git</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Devam Kayıtları</h5>
+        <p class="card-text">Günlük devam kontrolü</p>
+        <a href="#" class="btn btn-warning">Yakında</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row mt-4">
+
+  <div class="col-md-4 mb-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Maaş Listesi</h5>
+        <p class="card-text">Aylık maaş kayıtlarını gör</p>
+        <a href="#" class="btn btn-info">Yakında</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

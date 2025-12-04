@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">Personel Listesi</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Departman</th>
+            <th>Maaş</th>
+            <th>Aktif mi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in personeller %}
+        <tr>
+            <td>{{ p.personel_id }}</td>
+            <td>{{ p.ad }}</td>
+            <td>{{ p.soyad }}</td>
+            <td>{{ p.departman_adi or "-" }}</td>
+            <td>{{ p.maas }}</td>
+            <td>
+                {% if p.aktif_mi == 1 %}
+                    Aktif
+                {% else %}
+                    Pasif
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if not personeller %}
+<div class="alert alert-warning">
+    Sistemde kayıtlı personel bulunamadı.
+</div>
+{% endif %}
+
+{% endblock %}
